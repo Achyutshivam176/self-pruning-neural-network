@@ -1,0 +1,5 @@
+This project presents a self-pruning neural network designed to reduce model complexity during training. Instead of applying pruning after training, each weight in the network is associated with a learnable gate parameter that determines its importance. These gates are transformed using a sigmoid function to produce values between 0 and 1, effectively controlling whether a connection is active or suppressed.
+
+A custom prunable linear layer is implemented where weights are multiplied with their corresponding gates before performing computations. To encourage sparsity, an L1 regularization term is added to the loss function, which pushes many gate values toward zero, allowing the model to automatically remove less important connections.
+
+This approach demonstrates how neural networks can dynamically optimize their architecture during training, achieving a balance between model performance and computational efficiency. The implementation focuses on core architectural design and concept demonstration.
